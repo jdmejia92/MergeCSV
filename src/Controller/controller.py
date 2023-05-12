@@ -15,11 +15,11 @@ def start():
             with pbar:
                 for i in range(20):
                     pbar.update()
-                    sleep(0.3)
+                    sleep(0.1)
                 folder = create_folder(folder_dict)
                 for i in range(50):
                     pbar.update()
-                    sleep(0.2)
+                    sleep(0.1)
                 csv = merge_CSV(dictionary=folder_dict, created=folder)
                 for i in range(30):
                     pbar.update()
@@ -30,8 +30,16 @@ def start():
         """
         Control of errors
         """
-        print(ex)
-        print("""Contact the customer service... 
+        if type(ex) == ValueError:
+            print("""No CSV files found... Check the chosen directory
+Or contact the programmer for more information""")
+            sleep(2)
+            exit = input("Press enter to exit")
+            if exit:
+                sys.exit()
+        else:
+            print(ex)
+            print("""Contact the customer service... 
 Closing...""")
-        sleep(2)
-        sys.exit()
+            sleep(2)
+            sys.exit()
