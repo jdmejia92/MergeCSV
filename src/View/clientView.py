@@ -12,12 +12,12 @@ def save_directory():
     while ready:
         if not os.path.exists("directory.csv"):
             print("""Welcome to the MERGE CSV PROGRAM
-        Please define your directory where the files are located. 
-        If you want to find the location of your Folder, go to that foler, right click on the folder
-        go to properties, there you'll find the location, usually is something like this: 
-        C:/Users/YourUser/FOLDER/ 
-        Remember the separation of the directory must use: '/'
-        ----------------------------------------------------------------------------------""")
+Please define your directory where the files are located. 
+If you want to find the location of your Folder, go to that foler, right click on the folder
+go to properties, there you'll find the location, usually is something like this: 
+C:/Users/YourUser/FOLDER/ 
+Remember the separation of the directory must use: '/'
+----------------------------------------------------------------------------------""")
             input_directory = input("Paste the directory here: ")
             compare_c = re.compile("[a-zA-Z]:/*")
             if compare_c.match(input_directory):
@@ -28,7 +28,7 @@ def save_directory():
             else:
                 print("Directory format not correct. The Directory must be something like C:/Users/YourUser/FOLDER/")
                 sleep(2)
-                character = input("If you want to restart press 'r', if you want to exit press other key: ")
+                character = input("If you want to restart press 'r' + enter, if you want to exit press other key: ")
                 if character == "r":
                     ready = True
                 else:
@@ -46,5 +46,5 @@ def progress_bar():
     return pbar
 
 def finish():
-    end = print("Finish!!!")
+    end = print("Success!!!")
     return end

@@ -43,7 +43,7 @@ def merge_CSV(dictionary, created):
         sorted = dataframe.sort_values(by="time").drop_duplicates(subset="time")
         sorted.to_csv(dictionary["file"], header=True, index=None)
     else:
-        if os.path.exists(dictionary["folder"] + "/MergeCSV.csv"):
+        if os.path.exists(dictionary["folder"] + "MergeCSV.csv"):
             csv_file = pd.read_csv(dictionary["file"])                
         big_list = []
         # You can change the name of the files to merge or just leave the extension
@@ -51,7 +51,7 @@ def merge_CSV(dictionary, created):
             csv = pd.read_csv(file)
             big_list.append(csv)
         dataframe = pd.concat(big_list, ignore_index=True, sort=False)
-        if os.path.exists(dictionary["folder"] + "/MergeCSV.csv"):
+        if os.path.exists(dictionary["folder"] + "MergeCSV.csv"):
             final_df = pd.concat([csv_file, dataframe], ignore_index=True, sort=False).drop_duplicates()
         else:
             final_df = dataframe.drop_duplicates()
