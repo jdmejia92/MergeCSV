@@ -32,7 +32,7 @@ To convert the Python script into a .exe
   ```
 2. Then use the library `pyinstaller` to convert the script
   ```powershell
-  pyinstaller --onefile script_name.py
+  pyinstaller --onefile run.py
   ```
 ---
 When the program is execute, it will ask for a directory where the files are stored. In that same directory it will store the merge document.
